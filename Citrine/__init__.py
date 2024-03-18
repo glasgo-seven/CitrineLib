@@ -1,13 +1,13 @@
-import ackerman
-import bin_search
-import console
-import gcd
-import intToBin
-import matrix_ops
-import perceptron
-import prime_sieve
-import sort_quick
-import sort_selection
+from . import ackerman
+from . import bin_search
+from . import console
+from . import gcd
+from . import intToBin
+from . import matrix_ops
+from . import perceptron
+from . import prime_sieve
+from . import sort_quick
+from . import sort_selection
 
 
 __version__ = '0.0.1'
