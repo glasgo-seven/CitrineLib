@@ -1,10 +1,12 @@
 from setuptools import setup
 
+from Citrine import __version__
+
 setup(
 	name='Citrine',
-	version='0.0.1',
+	version=__version__,
 	description='A library of scripts and algorithms for personal use',
-	
+
 	url='https://github.com/glasgo-seven/Citrine',
 
 	author='glasgo-seven',
