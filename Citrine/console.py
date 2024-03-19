@@ -95,6 +95,16 @@ def as_alert(text : str) -> str :
 	return as_colored(text, fg=FOREGROUND_COLORS_STRONG['yellow'])
 
 
+# def notification(msg : str) -> None :
+# 	print(f"\x1b[{FOREGROUND_COLORS['green']}m{msg}\x1b[0m")
+
+def notification(*msgs : tuple[str]) -> None:
+	colored(*msgs, fg=FOREGROUND_COLORS_STRONG['green'])
+
+def as_notification(text : str) -> str :
+	return as_colored(text, fg=FOREGROUND_COLORS_STRONG['green'])
+
+
 if __name__ == '__main__':
 	abc = 123
 	print(abc)
