@@ -1,18 +1,18 @@
 from setuptools import setup
 
-from Citrine import __version__
+from CitrineLib import __version__
 
 setup(
-	name='Citrine',
+	name='CitrineLib',
 	version=__version__,
 	description='A library of scripts and algorithms for personal use',
 
-	url='https://github.com/glasgo-seven/Citrine',
+	url='https://github.com/glasgo-seven/CitrineLib',
 
 	author='glasgo-seven',
 	author_email='glasgoseven@gmail.com',
 
-	packages=['Citrine'],
+	packages=['CitrineLib'],
 	install_requires=[
 
  	],
