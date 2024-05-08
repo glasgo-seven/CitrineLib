@@ -2,6 +2,7 @@ __pycache__/
 
 # CitrineLib/*
 .other/
+tests/
 
 !CitrineLib/__init__.py
 !CitrineLib/console.py

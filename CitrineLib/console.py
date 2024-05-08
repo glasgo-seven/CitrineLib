@@ -24,7 +24,9 @@ def clear_screen() -> None :
 
 
 class Color(Enum):
-	RESET_COLOR	:	str	=	'0'
+	pass
+
+RESET_COLOR	:	str	=	'0'
 
 #	Цвета текста
 class FOREGROUND_COLOR(Color):
@@ -87,7 +89,7 @@ def reset_color() -> None:
 	"""
 	Resets text color and background to default (white text, black background).
 	"""
-	print(f"\x1b[{Color.RESET_COLOR}m", end='')
+	print(f"\x1b[{RESET_COLOR}m", end='')
 
 
 
@@ -107,41 +109,83 @@ def as_colored(_text: str, _fg: Color = None, _bg: Color = None) -> str :
 
 
 def __error(_msg: str) -> None :
+	"""
+	~DEPRECATED~
+
+	Prints colored as error (RED Foreground) text
+	"""
 	print(f"\x1b[{FOREGROUND_COLOR.RED}m{_msg}\x1b[0m")
 
 def error(*_msgs: tuple[str]) -> None:
+	"""
+	Prints colored as error (RED Foreground) text
+	"""
 	colored(*_msgs, _fg=FOREGROUND_COLOR.STRONG_RED)
 
 def as_error(_text: str) -> str :
+	"""
+	Returns colored as error (RED Foreground) text
+	"""
 	return as_colored(_text, _fg=FOREGROUND_COLOR.STRONG_RED)
 
 def custom_error(*_msgs : tuple[str], _prefix: str = DEFAULT_PREFIX_ERROR, _sep: str = ' ', _end: str = '\n') -> None:
+	"""
+	Prints colored as error (RED Foreground) text with a custom [tag] (default - "[ERROR]")
+	"""
 	colored(*(_prefix, *_msgs), _fg=FOREGROUND_COLOR.STRONG_RED, _sep=_sep, _end=_end)
 
 
 def __alert(_msg: str) -> None :
+	"""
+	~DEPRECATED~
+	
+	Prints colored as alert (YELLOW Foreground) text
+	"""
 	print(f"\x1b[{FOREGROUND_COLOR.YELLOW}m{_msg}\x1b[0m")
 
 def alert(*_msgs: tuple[str]) -> None:
+	"""
+	Prints colored as alert (YELLOW Foreground) text
+	"""
 	colored(*_msgs, _fg=FOREGROUND_COLOR.STRONG_YELLOW)
 
 def as_alert(_text: str) -> str :
+	"""
+	Returns colored as alert (YELLOW Foreground) text
+	"""
 	return as_colored(_text, _fg=FOREGROUND_COLOR.STRONG_YELLOW)
 
 def custom_alert(*_msgs : tuple[str], _prefix: str = DEFAULT_PREFIX_ALERT, _sep: str = ' ', _end: str = '\n') -> None:
+	"""
+	Prints colored as alert (YELLOW Foreground) text with a custom [tag] (default - "[ALERT]")
+	"""
 	colored(*(_prefix, *_msgs), _fg=FOREGROUND_COLOR.STRONG_YELLOW, _sep=_sep, _end=_end)
 
 
 def __notification(_msg: str) -> None :
+	"""
+	~DEPRECATED~
+	
+	Prints colored as notification (GREEN Foreground) text
+	"""
 	print(f"\x1b[{FOREGROUND_COLOR.GREEN}m{_msg}\x1b[0m")
 
 def notification(*_msgs: tuple[str]) -> None:
+	"""
+	Prints colored as notification (GREEN Foreground) text
+	"""
 	colored(*_msgs, _fg=FOREGROUND_COLOR.STRONG_GREEN)
 
 def as_notification(_text: str) -> str :
+	"""
+	Returns colored as notification (GREEN Foreground) text
+	"""
 	return as_colored(_text, _fg=FOREGROUND_COLOR.STRONG_GREEN)
 
 def custom_notification(*_msgs : tuple[str], _prefix: str = DEFAULT_PREFIX_NOTIFICATION, _sep: str = ' ', _end: str = '\n') -> None:
+	"""
+	Prints colored as notification (GREEN Foreground) text with a custom [tag] (default - "[NOTIFICATION]")
+	"""
 	colored(*(_prefix, *_msgs), _fg=FOREGROUND_COLOR.STRONG_GREEN, _sep=_sep, _end=_end)
 
 
